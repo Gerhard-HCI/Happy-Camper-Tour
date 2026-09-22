@@ -1,1 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Camper Ltd. — Unlocking Japan, one thoughtful moment at a time</title>
+<meta name="description" content="Happy Camper Ltd. arranges bespoke culinary journeys through Japan — omakase counters, kaiseki ryokan, private guides. Tokyo, Kyoto, London.">
+<meta name="theme-color" content="#131e36">
+
+<!-- Open Graph: used when the link is shared in WhatsApp, iMessage, LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Happy Camper Ltd.">
+<meta property="og:description" content="Unlocking Japan, one thoughtful moment at a time.">
+<meta property="og:url" content="https://happycamper.food/">
+<!-- SET THIS: absolute URL of a 1200x630 share image once you have one -->
+<meta property="og:image" content="">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&display=swap">
+
+<style>
+/* ---------------------------------------------------------------
+   Happy Camper Ltd. — happycamper.food                    v1
+   Single self-contained file. Hardcoded hex throughout (no CSS
+   custom properties) — iOS Safari drops var() on interactive
+   elements inside some contexts.
+   --------------------------------------------------------------- */
+
+*{box-sizing:border-box}
+html{background-color:#131e36;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background-color:#131e36;
+  color:#f4f1ec;
+  font-family:Jost,-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+main{display:block;background-color:#131e36}
+a{color:#c9a961}
+a:hover{color:#dcc088}
+img{max-width:100%;display:block}
+
+.serif{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif}
+
+/* ---------- HERO : the proposal back cover, as the opening screen ---------- */
+
+.hero{
+  position:relative;
+  background-color:#131e36;
+  display:grid;
+  grid-template-columns:1fr;
+  min-height:100svh;
+}
+/* gold hairline frame, as printed */
+.hero-frame{
+  position:absolute;
+  top:18px;right:18px;bottom:18px;left:18px;
+  border:1px solid #8a6f38;
+  pointer-events:none;
+  z-index:2;
+}
+.hero-panel{
+  background-color:#131e36;
+  padding:64px 30px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:20px;
+  z-index:1;
+}
+.wordmark{
+  font-size:clamp(38px,9vw,62px);
+  font-weight:400;
+  line-height:1.02;
+  color:#f4f1ec;
+  margin:0;
+}
+.tagline{
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(19px,4.6vw,26px);
+  line-height:1.4;
+  color:#c9a961;
+  max-width:440px;
+  margin:0;
+}
+.rule{width:220px;height:1px;background-color:#3a4667;margin:10px 0 4px}
+.cities{font-size:15px;letter-spacing:.06em;color:#c3cad9}
+.contacts{font-size:16px;color:#c9a961;line-height:1.9}
+.contacts a{color:#c9a961;text-decoration:none}
+.contacts a:hover{text-decoration:underline}
+.sep{color:#6f7a94}
+
+/* photo plate — a real photograph replaces the placeholder tint */
+.hero-photo{
+  position:relative;
+  min-height:44svh;
+  background-color:#1a2848;
+  background-image:linear-gradient(160deg,#1a2848 0%,#131e36 100%);
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:28px;
+}
+.hero-photo .placeholder{
+  font-size:12px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#7f8aa5;
+  max-width:340px;
+  line-height:1.8;
+}
+.hero-photo.has-image .placeholder{display:none}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:56px !important;
+  padding:0 32px !important;
+  background-color:#c9a961 !important;
+  color:#131e36 !important;
+  border:none !important;
+  border-radius:0 !important;
+  font-family:Jost,-apple-system,sans-serif !important;
+  font-size:13px !important;
+  font-weight:500 !important;
+  letter-spacing:.2em !important;
+  text-transform:uppercase !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
+  -webkit-appearance:none !important;
+  appearance:none !important;
+}
+.btn:hover{background-color:#dcc088 !important;color:#131e36 !important}
+.btn-ghost{
+  background-color:transparent !important;
+  color:#f4f1ec !important;
+  border:1px solid #3a4667 !important;
+}
+.btn-ghost:hover{background-color:#1a2848 !important;color:#f4f1ec !important}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+
+/* ---------- three facts ---------- */
+
+.facts{
+  background-color:#131e36;
+  padding:64px 30px;
+  border-bottom:1px solid #263151;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+}
+.fact h2{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:34px;
+  font-weight:300;
+  color:#f4f1ec;
+  margin:0 0 10px;
+}
+.fact p{margin:0;font-size:16px;line-height:1.75;color:#9aa3b8}
+
+/* ---------- enquiry ---------- */
+
+.enquire{background-color:#131e36;padding:64px 30px 72px}
+.enquire-head{text-align:center;max-width:560px;margin:0 auto 34px}
+.enquire-head h2{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(32px,7vw,44px);
+  font-weight:300;
+  color:#f4f1ec;
+  margin:0 0 10px;
+}
+.enquire-head p{margin:0;font-size:16px;line-height:1.7;color:#9aa3b8}
+.enquire-head a{text-decoration:none}
+
+form{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{
+  font-size:11px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#9aa3b8;
+}
+.field input,
+.field textarea{
+  width:100% !important;
+  min-height:52px !important;
+  padding:14px !important;
+  background-color:#1a2848 !important;
+  border:1px solid #2f3c5e !important;
+  border-radius:0 !important;
+  color:#f4f1ec !important;
+  font-family:Jost,-apple-system,sans-serif !important;
+  font-size:16px !important; /* 16px stops iOS zooming on focus */
+  font-weight:300 !important;
+  -webkit-appearance:none !important;
+  appearance:none !important;
+}
+.field textarea{resize:vertical !important;min-height:120px !important}
+.field input:focus,
+.field textarea:focus{outline:2px solid #c9a961 !important;outline-offset:1px}
+.form-note{font-size:13px;color:#6f7a94;text-align:center;margin:2px 0 0}
+.form-status{
+  display:none;
+  padding:16px;
+  background-color:#1a2848;
+  border:1px solid #8a6f38;
+  color:#f4f1ec;
+  font-size:15px;
+  line-height:1.6;
+  text-align:center;
+}
+.form-status.show{display:block}
+.form-status.error{border-color:#8a4a4a}
+
+/* ---------- footer ---------- */
+
+footer{
+  background-color:#0e1729;
+  padding:28px 30px calc(28px + env(safe-area-inset-bottom));
+  border-top:1px solid #263151;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.06em;
+  color:#6f7a94;
+  text-align:center;
+}
+
+/* ---------- desktop ---------- */
+
+@media (min-width:880px){
+  .hero{grid-template-columns:1fr 1fr;min-height:100svh}
+  .hero-frame{top:32px;right:32px;bottom:32px;left:32px}
+  .hero-panel{padding:96px 72px;gap:24px}
+  .hero-photo{min-height:auto}
+  .facts{
+    padding:84px 110px;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:64px;
+  }
+  .fact h2{font-size:38px}
+  .enquire{padding:72px 110px 84px}
+  form{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .field-wide{grid-column:span 3}
+  .form-actions{grid-column:span 3;display:flex;justify-content:center}
+  .form-note{grid-column:span 3}
+  .form-status{grid-column:span 3}
+  footer{
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    padding:26px 110px;
+    text-align:left;
+  }
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .btn{transition:background-color .2s ease}
+}
+</style>
+</head>
+
+<body>
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="hero-frame"></div>
+
+    <div class="hero-panel">
+      <h1 class="wordmark serif">Happy Camper Ltd.</h1>
+      <p class="tagline serif">Unlocking Japan, one thoughtful moment at a time.</p>
+      <div class="rule"></div>
+      <div class="cities">Tokyo · Kyoto · London</div>
+      <div class="contacts">
+        <a href="mailto:hello@happycamper.food">hello@happycamper.food</a>
+        <span class="sep"> · </span>
+        <a href="tel:+819061589006">+81 90 6158 9006</a>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="#enquire">Request an introduction</a>
+        <a class="btn btn-ghost" href="mailto:hello@happycamper.food">Write to us</a>
+      </div>
+    </div>
+
+    <!-- Photograph. Set HERO_IMAGE in the CONFIG block below to fill it. -->
+    <div class="hero-photo" id="heroPhoto">
+      <span class="placeholder">[ Hero photograph — the back-cover frame: pagoda, Fuji, blossom at dusk ]</span>
+    </div>
+  </section>
+
+  <!-- ============================ WHAT / WHERE / WHO ============================ -->
+  <section class="facts">
+    <div class="fact">
+      <h2 class="serif">What</h2>
+      <p>Bespoke itineraries built around omakase counters and kaiseki ryokan — with private guides, cars, and every reservation held in our name.</p>
+    </div>
+    <div class="fact">
+      <h2 class="serif">Where</h2>
+      <p>Tokyo and Kyoto, with occasional journeys further afield. Planned from London, run from Japan.</p>
+    </div>
+    <div class="fact">
+      <h2 class="serif">Who</h2>
+      <p>Gerhard Huber and Tomoko Morikawa, with a small team of licensed guides and drivers.</p>
+    </div>
+  </section>
+
+  <!-- ============================ ENQUIRY ============================ -->
+  <section class="enquire" id="enquire">
+    <div class="enquire-head">
+      <h2 class="serif">Leave a note.</h2>
+      <p>We reply personally. Or reach us directly on <a href="tel:+818069892107">+81 80 6989 2107</a>.</p>
+    </div>
+
+    <form id="enquiryForm" method="POST" novalidate>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-dates">Dates</label>
+        <input id="f-dates" name="dates" type="text" placeholder="e.g. late April 2027">
+      </div>
+      <div class="field field-wide">
+        <label for="f-note">Your note</label>
+        <textarea id="f-note" name="note" rows="4"></textarea>
+      </div>
+
+      <!-- honeypot: hidden from people, filled by bots -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+
+      <div class="form-actions">
+        <button class="btn" type="submit" id="submitBtn">Send</button>
+      </div>
+      <p class="form-note">Planning usually begins six to nine months ahead.</p>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <footer>
+    <span>© 2026 Happy Camper Ltd. · Tokyo · Kyoto · London</span>
+    <span>happycamper.food</span>
+  </footer>
+
+</main>
+
+<script>
+/* ---------------------------------------------------------------
+   CONFIG — the only two things to change on this page.
+   --------------------------------------------------------------- */
+var CONFIG = {
+
+  /* 1. FORM ENDPOINT
+        Create a NEW form at formspree.io (do not reuse the dietary
+        questionnaire endpoint — the free tier is 50 submissions a
+        month and you want enquiries kept separate). Paste its URL
+        here. Left empty, the form falls back to opening the
+        visitor\'s mail app with the message pre-filled, so the page
+        still works from the moment it is committed.             */
+  FORMSPREE_ENDPOINT: '',
+
+  /* 2. HERO PHOTOGRAPH
+        A URL, or a filename sitting next to this file in the repo
+        (e.g. 'hero.jpg'). Landscape, at least 1600px wide.
+        Left empty, the panel stays a plain navy field.          */
+  HERO_IMAGE: '',
+
+  /* Where enquiries land when no endpoint is set. */
+  FALLBACK_EMAIL: 'hello@happycamper.food'
+};
+
+/* ---------------------------------------------------------------
+   Nothing below needs editing.
+   --------------------------------------------------------------- */
+(function () {
+  'use strict';
+
+  /* --- hero photograph --- */
+  function mountHeroImage() {
+    if (!CONFIG.HERO_IMAGE) { return; }
+    var plate = document.getElementById('heroPhoto');
+    if (!plate) { return; }
+    var probe = new Image();
+    probe.onload = function () {
+      plate.style.backgroundImage = 'url("' + CONFIG.HERO_IMAGE + '")';
+      plate.classList.add('has-image');
+    };
+    probe.src = CONFIG.HERO_IMAGE; /* fails silently: placeholder stays */
+  }
+
+  /* --- enquiry form --- */
+  var form = document.getElementById('enquiryForm');
+  var statusBox = document.getElementById('formStatus');
+  var submitBtn = document.getElementById('submitBtn');
+
+  function say(message, isError) {
+    statusBox.textContent = message;
+    statusBox.className = 'form-status show' + (isError ? ' error' : '');
+  }
+
+  function readForm() {
+    return {
+      name: (form.name && form.name.value || '').trim(),
+      email: (form.email && form.email.value || '').trim(),
+      dates: (form.dates && form.dates.value || '').trim(),
+      note: (form.note && form.note.value || '').trim(),
+      trap: (form._gotcha && form._gotcha.value || '').trim()
+    };
+  }
+
+  function looksLikeEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function openMailFallback(data) {
+    var subject = 'Enquiry from ' + (data.name || 'the website');
+    var body =
+      'Name: ' + data.name + '\n' +
+      'Email: ' + data.email + '\n' +
+      'Dates: ' + data.dates + '\n\n' +
+      data.note;
+    window.location.href =
+      'mailto:' + CONFIG.FALLBACK_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+    say('Opening your mail app. If nothing happens, write to ' + CONFIG.FALLBACK_EMAIL + '.', false);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    var data = readForm();
+
+    if (data.trap) { return; }               /* bot */
+    if (!data.name) { say('Please add your name.', true); return; }
+    if (!looksLikeEmail(data.email)) { say('Please check the email address.', true); return; }
+
+    if (!CONFIG.FORMSPREE_ENDPOINT) { openMailFallback(data); return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending';
+
+    fetch(CONFIG.FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        dates: data.dates,
+        note: data.note,
+        _subject: 'Website enquiry — ' + data.name
+      })
+    }).then(function (response) {
+      if (!response.ok) { throw new Error('Formspree responded ' + response.status); }
+      form.reset();
+      say('Thank you — your note is with us. We will reply personally, usually within a day.', false);
+    }).catch(function () {
+      say('That did not send. Please write to ' + CONFIG.FALLBACK_EMAIL + ' and we will pick it up straight away.', true);
+    }).then(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    });
+  }
+
+  if (form) { form.addEventListener('submit', handleSubmit); }
+  mountHeroImage();
+})();
+</script>
+</body>
+</html>
 
