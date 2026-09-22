@@ -52,6 +52,7 @@ img{max-width:100%;display:block}
   display:grid;
   grid-template-columns:1fr;
   min-height:100svh;
+  padding:19px;            /* holds the photograph inside the gold frame */
 }
 /* gold hairline frame, as printed */
 .hero-frame{
@@ -239,7 +240,7 @@ footer{
 /* ---------- desktop ---------- */
 
 @media (min-width:880px){
-  .hero{grid-template-columns:1fr 1fr;min-height:100svh}
+  .hero{grid-template-columns:1fr 1fr;min-height:100svh;padding:33px}
   .hero-frame{top:32px;right:32px;bottom:32px;left:32px}
   .hero-panel{padding:96px 72px;gap:24px}
   .hero-photo{min-height:auto}
